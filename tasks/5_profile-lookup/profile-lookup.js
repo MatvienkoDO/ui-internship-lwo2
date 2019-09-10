@@ -38,7 +38,7 @@ export function lookupProfile(firstName, prop) {
     return errors.noSuchContact;
   }
 
-  if (prop in contact === false) {
+  if (!(prop in contact)) {
     return errors.noSuchProperty;
   }
 
