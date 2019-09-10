@@ -1,16 +1,13 @@
 export function arrayChunks(arr, groupLength) {
-  const result = [];
-
-  arr.forEach((element, index) => {
-    const groupNumber = Math.floor(index / groupLength);
+  return arr.reduce((accumulator, current, index) => {
     const numberInGroup = index % groupLength;
 
     if (numberInGroup === 0) {
-      result.push([]);
+      accumulator.push([]);
     }
 
-    result[groupNumber][numberInGroup] = element;
-  });
+    accumulator[accumulator.length - 1].push(current);
 
-  return result;
+    return accumulator;
+  }, []);
 }
