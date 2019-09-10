@@ -1,5 +1,5 @@
 export function randomFraction() {
-    return Math.random();
+  return Math.random();
 }
 
-//export const randomFraction = Math.random;
+// export const randomFraction = Math.random;

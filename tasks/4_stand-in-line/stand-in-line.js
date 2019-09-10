@@ -1,4 +1,4 @@
 export function nextInLine(array, element) {
-    array.push(element);
-    return array.shift();
+  array.push(element);
+  return array.shift();
 }

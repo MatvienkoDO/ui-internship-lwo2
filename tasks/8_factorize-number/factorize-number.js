@@ -1,22 +1,22 @@
 export function factorialize(n) {
-    let result = 1;
+  let result = 1;
 
-    for(let i = 2; i <= n; ++i) {
-        result *= i;
-    }
+  for (let i = 2; i <= n; ++i) {
+    result *= i;
+  }
 
-    return result;
+  return result;
 }
 
 /* solution through tail-recursion
 export function factorialize(n) {
-    return factorializeInner(n);
+  return factorializeInner(n);
 }
 
 function factorializeInner(n, total = 1) {
-    if(n <= 1) {
-        return total;
-    }
+  if (n <= 1) {
+    return total;
+  }
 
-    return factorializeInner(n - 1, total * n);
+  return factorializeInner(n - 1, total * n);
 }*/
