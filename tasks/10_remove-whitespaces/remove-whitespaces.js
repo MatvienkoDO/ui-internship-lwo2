@@ -1,5 +1,5 @@
 export function trimWhiteSpaces(text) {
-    return text
-        .split(' ')
-        .join('');
+  return text
+      .split(' ')
+      .join('');
 }
