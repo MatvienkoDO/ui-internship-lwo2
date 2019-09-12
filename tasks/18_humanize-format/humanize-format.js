@@ -1,7 +1,5 @@
 export function humanizeFormat(num) {
-  if (typeof num === 'number' && !isNaN(num) && Number.isFinite(num)) {
-    // right number, continiue work
-  } else {
+  if (typeof num !== 'number' || isNaN(num) || !Number.isFinite(num)) {
     return '';
   }
 
