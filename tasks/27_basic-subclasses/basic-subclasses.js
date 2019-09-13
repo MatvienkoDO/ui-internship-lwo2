@@ -13,21 +13,20 @@ export class God {
 }
 
 export class Human {
-  constructor(name) {
+  constructor(name, sex) {
     this.name = name;
+    this.sex = sex;
   }
 }
 
 export class Man extends Human {
   constructor(name) {
-    super(name);
-    this.sex = SEX.MALE;
+    super(name, SEX.MALE);
   }
 }
 
 export class Woman extends Human {
   constructor(name) {
-    super(name);
-    this.sex = SEX.FEMALE;
+    super(name, SEX.FEMALE);
   }
 }
