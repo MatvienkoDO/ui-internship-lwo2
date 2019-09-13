@@ -1,3 +1,8 @@
+const SEX = Object.freeze({
+  MALE: 'male',
+  FEMALE: 'female',
+});
+
 export class God {
   static create() {
     return [
@@ -12,11 +17,6 @@ export class Human {
     this.name = name;
   }
 }
-
-const SEX = Object.freeze({
-  MALE: 'male',
-  FEMALE: 'female',
-});
 
 export class Man extends Human {
   constructor(name) {

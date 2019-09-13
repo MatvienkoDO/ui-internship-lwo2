@@ -1,3 +1,3 @@
 export function removeFalsyValues(values) {
-  return values.filter((value) => value);
+  return values.filter(Boolean);
 }
