@@ -3,12 +3,10 @@ export function uniqueInOrder(seq) {
     seq = seq.split('');
   }
 
-  const seqIter = seq.values();
-
   const result = [];
   let last = undefined;
 
-  for (const item of seqIter) {
+  for (const item of seq) {
     if (item !== last) {
       result.push(item);
     }
