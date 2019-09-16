@@ -2,12 +2,12 @@
 
 xdescribe('Camel case', () => {
 
-    test("'hello case'.camelCase() should return 'HelloCase'", () => {
-        expect('hello case'.camelCase()).toBe("HelloCase");
+    test("'hello case'.camelCase() should return 'helloCase'", () => {
+        expect('hello case'.camelCase()).toBe("helloCase");
     });
 
-    test("'camel case word'.camelCase() should return 'CamelCaseWord'", () => {
-        expect('camel case word'.camelCase()).toBe("CamelCaseWord");
+    test("'camel case word'.camelCase() should return 'camelCaseWord'", () => {
+        expect('camel case word'.camelCase()).toBe("camelCaseWord");
     });
 
 });
