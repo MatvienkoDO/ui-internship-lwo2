@@ -1,18 +1,14 @@
-/**
- * checks whether whole string is upper case or not
- * @param {string} str string to check
- * @return {boolean}
- */
 function isUpperCase(str) {
   return str === str.toUpperCase();
 }
 
 /**
- * replaces before on after with same case of first letter
+ * @description replaces before on after with same case of first letter
  * @param {string} text text to generate new text with replaced tokens
  * @param {string} before token to find
  * @param {string} after token to replace found
  * @return {string}
+ * @example myReplace('He is Sleeping', 'Sleeping', 'sitting') = 'He is Sitting'
  */
 export function myReplace(text, before, after) {
   const firstLetter = isUpperCase(before[0])

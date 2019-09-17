@@ -1,7 +1,8 @@
 /**
- * makes abbreviated form of name
+ * @description makes abbreviated form of name
  * @param {string} fullname
- * @return {string}
+ * @return {string} abbreviated fullname
+ * @example abbreviated('Miller Robin Robin') = 'Miller R. R.'
  */
 export function abbreviated(fullname) {
   return fullname

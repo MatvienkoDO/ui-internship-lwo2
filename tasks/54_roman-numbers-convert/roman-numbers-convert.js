@@ -54,9 +54,10 @@ const rules = [
 ];
 
 /**
- * converts number from arabic digits in roman form
+ * @description converts number from arabic digits in roman form
  * @param {number} arabicNumber number that consists of arabic numerals
- * @return {string} string that represents number in roman manner
+ * @return {string} string that represents number in roman form
+ * @example convertToRoman(649) = 'DCXLIX'
  */
 export function convertToRoman(arabicNumber) {
   const initialAccumulator = {
