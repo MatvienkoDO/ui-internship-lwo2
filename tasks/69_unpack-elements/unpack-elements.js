@@ -8,7 +8,7 @@ export function unpackArray(arr) {
   arr = arr.slice();
 
   const thereAreArrays = () =>
-    arr.some((e) => Array.isArray(e));
+    arr.some(Array.isArray);
 
   while (thereAreArrays()) {
     arr = arr
