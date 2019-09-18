@@ -1,3 +1,9 @@
+/**
+ * @description checks specified string for palindromes
+ * @param {string} str string to check
+ * @return {boolean} result of check
+ * @example 'a q, qa' -> true
+ */
 export function palindrome(str) {
   const clean = (str.match(/[a-zA-Z\d]+/g) || [])
       .join('')
