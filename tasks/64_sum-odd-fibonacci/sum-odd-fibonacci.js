@@ -1,14 +1,17 @@
-const fibSeq = [1, 1];
+let fibSeqPrelast = 1;
+let fibSeqLast = 1;
 const oddFibSeq = [1, 1];
 
 function prolongSequence(n) {
-  while (fibSeq[fibSeq.length - 1] < n) {
-    const next = fibSeq[fibSeq.length - 2] + fibSeq[fibSeq.length - 1];
-    fibSeq.push(next);
+  while (fibSeqLast < n) {
+    const next = fibSeqPrelast + fibSeqLast;
 
     if (next % 2) {
       oddFibSeq.push(next);
     }
+
+    fibSeqPrelast = fibSeqLast;
+    fibSeqLast = next;
   }
 }
 
