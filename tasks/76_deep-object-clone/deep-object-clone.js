@@ -9,11 +9,11 @@ export function deepClone(obj) {
 
   for (const key in obj) {
     if (obj.hasOwnProperty(key)) {
-      if (typeof obj[key] === 'object') {
-        newObject[key] = deepClone(obj[key]);
-      } else {
-        newObject[key] = obj[key];
-      }
+      const value = obj[key];
+
+      newObject[key] = typeof value === 'object'
+        ? deepClone(value)
+        : value;
     }
   }
 
