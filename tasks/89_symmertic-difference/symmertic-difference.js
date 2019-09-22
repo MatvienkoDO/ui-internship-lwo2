@@ -1,22 +1,26 @@
+function symDiff(f, s) {
+  const firstMinusSecond = f.filter((e) => s.indexOf(e) === -1);
+  const secondMinusFirst = s.filter((e) => f.indexOf(e) === -1);
+
+  return firstMinusSecond.concat(secondMinusFirst);
+}
+
 /**
  * @description counts symmetric difference of arrays
- * @param  {...any} arrays
+ * @param  {Array<Array<number>>} arrays
  * @return {number[]} symmetric difference of arrays
  * @example ([1,2,3],[4,2,3]) -> [1,4]
  */
 export function sym(...arrays) {
-  const sets = arrays.map((array) => new Set(array));
+  const argumentsIter = arrays
+      .map((array) => [...new Set(array)])
+      .values();
 
-  const map = {};
+  let first = argumentsIter.next().value;
 
-  for (const set of sets) {
-    for (const number of set) {
-      map[number] = (map[number] || 0) + 1;
-    }
+  for (const next of argumentsIter) {
+    first = symDiff(first, next);
   }
 
-  return Object.entries(map)
-      .filter(([_, value]) => value === 1)
-      .map(([key]) => Number(key))
-      .sort((l, r) => l - r);
+  return first.sort((l, r) => l - r);
 }
