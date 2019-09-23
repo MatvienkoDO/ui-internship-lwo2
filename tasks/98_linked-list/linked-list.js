@@ -4,6 +4,9 @@ function Node(value) {
   this.next = null;
 }
 
+/**
+ * @description doubly linked linked list
+ */
 function LinkedList() {
   this._clear();
 
@@ -26,6 +29,14 @@ function LinkedList() {
   });
 }
 
+/**
+ * @description adds element to the end of current linked list
+ * @param {any} element element to add
+ * @return {void}
+ * @example push(4)
+ * before: 1 <-> 2 <-> 3
+ * after: 1 <-> 2 <-> 3 <-> 4
+ */
 LinkedList.prototype.push = function(element) {
   ++this._size;
 
@@ -43,6 +54,13 @@ LinkedList.prototype.push = function(element) {
   }
 };
 
+/**
+ * @description removes last element and returns its value
+ * @return {any} last element of linked list
+ * @example pop() -> 3
+ * before: 1 <-> 2 <-> 3
+ * after: 1 <-> 2
+ */
 LinkedList.prototype.pop = function() {
   if (this._size === 0) {
     return undefined;
@@ -67,6 +85,14 @@ LinkedList.prototype.pop = function() {
   return result;
 };
 
+/**
+ * @description calls specified callback with each element as param
+ * @param {function({value: any}): void} cb
+ * @return {void}
+ * @example iterate(cb)
+ * elements: 1 <-> 2 <-> 3
+ * calls: cb(1), cb(2), cb(3)
+ */
 LinkedList.prototype.iterate = function(cb) {
   let currentNode = this._firstNode;
 
@@ -78,6 +104,16 @@ LinkedList.prototype.iterate = function(cb) {
   }
 };
 
+/**
+ * @typedef {any} Element type of value being stored in linked list
+ * @description inserts insertable after searchable if last is found
+ * @param {Element} searchable
+ * @param {Element} insertable
+ * @return {boolean} true in case of searchable is found, otherwise - false
+ * @example insertAfter(2, 5)
+ * before: 1 <-> 2 <-> 3 <-> 4
+ * after: 1 <-> 2 <-> 5 <-> 3 <-> 4
+ */
 LinkedList.prototype.insertAfter = function(searchable, insertable) {
   let currentNode = this._firstNode;
 
@@ -116,6 +152,14 @@ LinkedList.prototype.insertAfter = function(searchable, insertable) {
   return true;
 };
 
+/**
+ * @description removes first 'removable' if it is found
+ * @param {any} removable
+ * @return {boolean} true in case of removable is found, otherwise - false
+ * @example removeItem(2)
+ * before: 1 <-> 2 <-> 3 <-> 2
+ * after:  1 <-> 3 <-> 2
+ */
 LinkedList.prototype.removeItem = function(removable) {
   if (this._size === 0) {
     return false;

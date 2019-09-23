@@ -5,6 +5,9 @@ class Node {
   }
 }
 
+/**
+ * @description stack structure
+ */
 export class Stack {
   constructor() {
     this._last = null;
@@ -23,6 +26,11 @@ export class Stack {
     });
   }
 
+  /**
+   * @description pushes element to the stack
+   * @param {any} value
+   * @return {void}
+   */
   push(value) {
     ++this._size;
 
@@ -33,6 +41,10 @@ export class Stack {
     this._last = newLast;
   }
 
+  /**
+   * @description removes last element and returns its value
+   * @return {any} value of last node
+   */
   pop() {
     if (this._size === 0) {
       return undefined;
