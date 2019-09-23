@@ -1,3 +1,10 @@
+/**
+ * @description counts sum of pairs indexes
+ * @param {number[]} arr numbers
+ * @param {number} arg sum of indexes in pair
+ * @return {number} sum of pairs indexes
+ * @example pairwise([1, 3, 2, 4], 4) -> 1
+ */
 export function pairwise(arr, arg) {
   let elements = arr.map((value, index) => ({value, index}));
 
