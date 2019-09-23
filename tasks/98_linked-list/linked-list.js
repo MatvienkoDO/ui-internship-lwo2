@@ -38,7 +38,8 @@ LinkedList.prototype.push = function(element) {
 
     this._lastNode = newNode;
   } else {
-    this._firstNode = this._lastNode = newNode;
+    this._firstNode = newNode;
+    this._lastNode = newNode;
   }
 };
 
