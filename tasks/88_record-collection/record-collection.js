@@ -38,7 +38,7 @@ export function updateRecords(id, prop, value) {
     return collection;
   }
 
-  if (value === '') {
+  if (!value.length) {
     delete album[prop];
     return collection;
   }
