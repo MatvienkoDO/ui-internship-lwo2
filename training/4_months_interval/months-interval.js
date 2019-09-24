@@ -17,15 +17,15 @@ export function monthsInterval(one, another) {
     return [];
   }
 
-  const first = new Date(Math.min(oneTimestamp, anotherTimestamp));
+  const current = new Date(Math.min(oneTimestamp, anotherTimestamp));
   const lastTimestamp = Math.max(oneTimestamp, anotherTimestamp);
 
   const monthsSet = {};
 
-  while (first.getTime() <= lastTimestamp) {
-    const month = first.getMonth();
+  while (current.getTime() <= lastTimestamp) {
+    const month = current.getMonth();
     monthsSet[month] = true;
-    first.setMonth(month + 1);
+    current.setMonth(month + 1);
   }
 
   const lastMonth = new Date(lastTimestamp).getMonth();
