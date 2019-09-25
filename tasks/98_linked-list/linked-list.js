@@ -62,7 +62,7 @@ LinkedList.prototype.push = function(element) {
  * after: 1 <-> 2
  */
 LinkedList.prototype.pop = function() {
-  if (this._size === 0) {
+  if (!this._size) {
     return undefined;
   }
 

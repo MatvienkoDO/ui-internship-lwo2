@@ -46,7 +46,7 @@ export class Stack {
    * @return {any} value of last node
    */
   pop() {
-    if (this._size === 0) {
+    if (!this._size) {
       return undefined;
     }
 
