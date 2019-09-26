@@ -66,23 +66,20 @@ LinkedList.prototype.pop = function() {
     return undefined;
   }
 
-  const result = this._lastNode.value;
+  const {value, previous} = this._lastNode;
 
   if (this._size === 1) {
     this._clear();
 
-    return result;
+    return value;
   }
 
   --this._size;
 
-  const oldLast = this._lastNode;
-  const newLast = oldLast.previous;
+  previous.next = null;
+  this._lastNode = previous;
 
-  newLast.next = null;
-  this._lastNode = newLast;
-
-  return result;
+  return value;
 };
 
 /**
