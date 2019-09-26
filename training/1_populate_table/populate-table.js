@@ -10,32 +10,45 @@
  * @return {void}
  */
 export function populateTable(students) {
-  const header =
-    `<tr>
-      <td>id</td>
-      <td>name</td>
-      <td>age</td>
-      <td>isWorkExperience</td>
-    </tr>`;
+  // eslint-disable-next-line no-undef
+  const document = window.document;
+
+  const header = document.createElement('tr');
+
+  const columns = ['id', 'name', 'age', 'isWorkExperience']
+      .map((text) => {
+        const td = document.createElement('td');
+        td.textContent = text;
+        return td;
+      });
+
+  columns.forEach((column) => {
+    header.appendChild(column);
+  });
 
   const studentsRows = students.map(({id, name, age, isWorkExperience}) => {
     const workExperience = isWorkExperience ? 'yes' : 'no';
 
-    return `
-      <tr>
-        <td>${id}</td>
-        <td>${name}</td>
-        <td>${age}</td>
-        <td>${workExperience}</td>
-      </tr>`;
+    const columns = [id, name, age, workExperience].map((text) => {
+      const td = document.createElement('td');
+      td.textContent = text;
+      return td;
+    });
+
+    const row = document.createElement('tr');
+    columns.forEach((column) => {
+      row.appendChild(column);
+    });
+
+    return row;
   });
 
-  const table = `
-    <table>
-      ${header}
-      ${studentsRows.join('')}
-    </table>`;
+  const table = document.createElement('table');
+  table.appendChild(header);
 
-  // eslint-disable-next-line no-undef
-  document.body.innerHTML = table;
+  studentsRows.forEach((row) => {
+    table.appendChild(row);
+  });
+
+  document.body.appendChild(table);
 }
